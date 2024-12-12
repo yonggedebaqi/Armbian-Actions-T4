@@ -99,6 +99,8 @@ jobs:
           #cp -rf ${{ github.workspace }}/addboard/config/* config
           #mkdir -p userpatches
           #cp -rf ${{ github.workspace }}/addboard/userpatches/* userpatches
+          rm -f packages/bsp/common/etc/update-motd.d/*
+          cp -f ${{ github.workspace }}/addboard/ssh/* packages/bsp/common/etc/update-motd.d/
           ls -la
   
       - name: Compile Armbian [ ${{ inputs.BOARD }} ${{ inputs.RELEASE }} ] 
