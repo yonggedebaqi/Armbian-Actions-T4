@@ -6,19 +6,10 @@ on:
       BOARD:  
         description: 'Board type'  
         required: true 
-        default: 'tpm312'
+        default: 'nanopct4'
         type: choice
         options:
-          - emb3531
-          - fine3399
-          - fmx1-pro
-          - r08
-          - rock960
-          - sg2710
-          - tpm312
-          - tb-ls3399
-          - xiaobao-nas
-          - zysj
+          - nanopct4
       BRANCH:  
         description: 'Armbian kernel branch'  
         default: 'current'  
@@ -77,9 +68,9 @@ jobs:
 
           cd build/
           # 复制 config 和 userpatches 目录文件    
-          cp -rf ${{ github.workspace }}/addboard/config/* config
-          mkdir -p userpatches
-          cp -rf ${{ github.workspace }}/addboard/userpatches/* userpatches
+          #cp -rf ${{ github.workspace }}/addboard/config/* config
+          #mkdir -p userpatches
+          #cp -rf ${{ github.workspace }}/addboard/userpatches/* userpatches
           ls -la
   
       - name: Compile Kernel [ ${{ inputs.BOARD }} ${{ inputs.BRANCH }} ] 
